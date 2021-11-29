@@ -1,12 +1,15 @@
 import { Link, useParams } from "react-router-dom";
+import { useCharacterContext } from "../../context/CharactersContext";
 import { useFetchCharacterById } from "../../hooks/useFetchCharacterById";
+import { useFetchCharacterByIdContext } from "../../hooks/useFetchCharacterByIdContext";
 import styles from "./character.module.css";
 
 const Character = () => {
   const { id } = useParams();
-  const { character, status } = useFetchCharacterById(id);
+  const { character, status } = useFetchCharacterByIdContext(id);
+  // const { character, status } = useFetchCharacterById(id);
 
-  if (status === "loading" || status === "idle") {
+  if (status === "loading" || status === "idle" || !character) {
     return <h2>loading</h2>;
   }
 

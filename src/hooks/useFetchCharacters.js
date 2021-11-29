@@ -7,7 +7,7 @@ export const useFetchCharacters = () => {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      setStatus("pending");
+      setStatus("loading");
 
       try {
         const { data } = await axios.get(

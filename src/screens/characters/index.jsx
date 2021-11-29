@@ -12,7 +12,7 @@ const Characters = () => {
   // const { filteredCharacters, onFiltersApply } = useFilters(characters);
 
   useFilters();
-  if (status === "idle" || status === "pending") {
+  if (status === "idle" || status === "loading") {
     return <h3>pending</h3>;
   }
 
